@@ -1,0 +1,65 @@
+Airline Ticket Receipt
+---------------------------
+Plane: A320
+Seat Type: Window/Aisle (Tk. 2900)
+Time: 11:00 AM
+Date: 12-01-2025
+From: France
+To: Germany
+Passenger ID: 1234
+Passenger Name: Anika
+Tickets: 2
+Total Price: Tk. 5800
+---------------------------
+Airline Ticket Receipt
+---------------------------
+Plane: A320
+Seat Type: Window/Aisle (Tk. 2900)
+Time: 11:00 AM
+Date: 12-01-2025
+From: France
+To: Germany
+Passenger ID: 1234
+Passenger Name: Anika
+Tickets: 2
+Total Price: Tk. 5800
+---------------------------
+Airline Ticket Receipt
+---------------------------
+Plane: Boeing757
+Seat Type: Window/Aisle (Tk. 2900)
+Time: 04:00 PM
+Date: 01-01-2025
+From: France
+To: Canada
+Passenger ID: 321
+Passenger Name: asd
+Tickets: 4
+Total Price: Tk. 11600
+---------------------------
+Airline Ticket Receipt
+---------------------------
+Plane: A320
+Seat Type: Window/Aisle (Tk. 2900)
+Time: 01:00 PM
+Date: 12-01-2025
+From: France
+To: Germany
+Passenger ID: 123
+Passenger Name: anika
+Tickets: 2
+Total Price: Tk. 5800
+---------------------------
+Airline Ticket Receipt
+---------------------------
+Plane: A320
+Seat Type: Window/Aisle (Tk. 2900)
+Time: 11:00 AM
+Date: 01-01-2025
+From: France
+To: Germany
+Passenger ID: 123
+Passenger Name: Anika
+Tickets: 2
+Total Price: Tk. 5800
+---------------------------

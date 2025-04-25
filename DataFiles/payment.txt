@@ -1,0 +1,7 @@
+1,Anika,A320,Window/Aisle,11:00 AM,France,Ireland,19-10-2024,1,350
+12,a,A320,Window/Aisle,11:00 AM,Canada,France,19-10-2024,6,2100
+456,a,A320,Window/Aisle,11:00 AM,France,Canada,22-05-2025,5,14500
+543,a,A320,Window/Aisle,11:00 AM,Ireland,Germany,12-01-2025,3,8700
+2345,S,Boeing757,Window/Aisle,11:00 AM,France,Canada,22-05-2025,1,2900
+123,Anika,Airbus1neo,Middle,05:00 PM,United States,Germany,22-05-2025,4,8800
+123,anika,A320,Window/Aisle,01:00 PM,Canada,Germany,01-01-2025,2,5800
