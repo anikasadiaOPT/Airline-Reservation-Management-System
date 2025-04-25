@@ -59,10 +59,10 @@ public class HomeFrame extends JFrame implements ActionListener{
         skyServeLabel.setForeground(Color.decode("#000111"));
         this.add(skyServeLabel);
 
-        // regBtn = new JButton("Register");
-        // regBtn.setBounds(650, 10, 70, 25);
-        // regBtn.addActionListener(this);
-        // this.add(regBtn);
+        regBtn = new JButton("Register");
+        regBtn.setBounds(500, 10, 100, 25);
+        regBtn.addActionListener(this);
+        this.add(regBtn);
 
         loginBtn = new JButton("Login");
         loginBtn.setBounds(740, 10, 100, 25);
@@ -84,9 +84,9 @@ public class HomeFrame extends JFrame implements ActionListener{
             Login login = new Login(); 
             this.dispose();
         }
-        // if(e.getSource() == regBtn){
-        //   Register reg = new Register();
-        //   this.dispose();
-        // }
+        if(e.getSource() == regBtn){
+          Register reg = new Register();
+          this.dispose();
+        }
     }
 }
