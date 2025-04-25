@@ -1,4 +1,5 @@
 package GUI;
+
 import Entities_All.SeatSelection;
 import FileManagement.LoginManagement;
 import Entities_All.User;
@@ -13,7 +14,6 @@ import javax.swing.JPasswordField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
-import javax.swing.JPasswordField;
 
 
 
@@ -92,16 +92,15 @@ public class Login extends JFrame implements ActionListener{
         if(e.getSource() == loginBtn){
             String username = usernameTxt.getText().trim();
             String email = emailTxt.getText().trim(); 
-            String password = new String(passwordTxt.getPassword().trim());
+            String password = new String(passwordTxt.getPassword()).trim();
 
             if ((username.isEmpty()) || (email.isEmpty()) || (password.isEmpty())) {
                 JOptionPane.showMessageDialog(this, "Please fill in all fields!");
                 return;
             }
-
+            boolean isValid = loginManagement.validateUser(username, email, password);
             loginManagement.addUser(username, email, password);
             //int response = JOptionPane.showConfirmDialog(this, "User registered successfully!", "Success", JOptionPane.OK_CANCEL_OPTION);
-            boolean isValid = loginManagement.validateUser(username, email, password);
             if (isValid) {
                 JOptionPane.showMessageDialog(this, "Login successful!");
                 SeatSelectionGUI seatSelection = new SeatSelectionGUI();

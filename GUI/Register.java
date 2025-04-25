@@ -1,5 +1,9 @@
 package GUI;
+
+// import GUI.Login;   
+import FileManagement.LoginManagement;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -13,6 +17,8 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 
+
+import FileManagement.LoginManagement;
 public class Register extends JFrame implements ActionListener{
     Font arial = new Font("Arial", Font.BOLD, 20);
     Font arialA = new Font("Arial", Font.PLAIN, 15);
@@ -193,12 +199,21 @@ public void actionPerformed(ActionEvent e){
             termsError.setText("You must agree to continue");
             valid = false;
         }
+        if (valid) {
+            LoginManagement loginManagement = new LoginManagement();
+            loginManagement.addUser(
+                usernametxt.getText().trim(),
+                emailtxt.getText().trim(),
+                String.valueOf(pswrdfld.getPassword()).trim()
+            );
 
-        if(valid){
-            // All fields are valid – open SeatSelectionGUI
-            Login l = new Login();
-            this.dispose(); // optional: close current window
+        JOptionPane.showMessageDialog(this, "Registration successful!");
+        Login l = new Login();
+        this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Please correct the errors and try again.");
         }
+
     }
 }
 

@@ -33,4 +33,36 @@ public class LoginManagement{
             writeUserToFile(user, true);
         }
     }
+
+    public boolean validateUser(String username, String email, String password) {
+        try {
+            File file = new File(filePath);
+            java.util.Scanner scanner = new java.util.Scanner(file);
+    
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] parts = line.split("\\|");
+    
+                if (parts.length >= 3) {
+                    String storedUsername = parts[0].trim();
+                    String storedEmail = parts[1].trim();
+                    String storedPassword = parts[2].trim();
+    
+                    if (storedUsername.equals(username) &&
+                        storedEmail.equals(email) &&
+                        storedPassword.equals(password)) {
+                        scanner.close();
+                        return true;
+                    }
+                }
+            }
+            scanner.close();
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+            e.printStackTrace();  // This will help you debug by printing the stack trace
+        }
+    
+        return false;
+    }
+    
 }

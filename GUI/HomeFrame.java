@@ -5,12 +5,16 @@ import javax.swing.JFrame;
 import javax.swing.ImageIcon; // Add this import statement
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
+// import GUI.Register;
+// import GUI.Login;
+// import FileManagement.LoginManagement;
 
 public class HomeFrame extends JFrame implements ActionListener{
     Font arialA = new Font("Arial", Font.BOLD, 40);
@@ -29,10 +33,12 @@ public class HomeFrame extends JFrame implements ActionListener{
         this.setResizable(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        image = new ImageIcon("D:\\Airline Reservation System\\Images\\Airline.png"); // Replace with your PNG image path
+        image = new ImageIcon("Images\\Airline.png"); // Replace with your PNG image path
         background = new JLabel(image); // JLabel to hold the background image
         background.setBounds(0, 0, this.getWidth(), this.getHeight());
 
+        background.setLayout(null); // Allow adding components on it
+        this.setContentPane(background); 
 
         welcomeLabel = new JLabel();
         welcomeLabel.setText("Welcome");
@@ -60,7 +66,7 @@ public class HomeFrame extends JFrame implements ActionListener{
         this.add(skyServeLabel);
 
         regBtn = new JButton("Register");
-        regBtn.setBounds(500, 10, 100, 25);
+        regBtn.setBounds(600, 10, 100, 25);
         regBtn.addActionListener(this);
         this.add(regBtn);
 
@@ -70,23 +76,36 @@ public class HomeFrame extends JFrame implements ActionListener{
         this.add(loginBtn);
 
 
-        ImageIcon icon = new ImageIcon("D:\\Airline Reservation System\\Images\\Icon.png");
+        ImageIcon icon = new ImageIcon("Images\\Icon.png");
         this.setIconImage(icon.getImage());
         this.getContentPane().setBackground(Color.decode("#00254d"));
-        //this.setLayout(null);
-        this.add(background);
+        this.setLayout(null);
+        
+        //this.add(background);
         this.setVisible(true);
 
     }
      @Override
      public void actionPerformed(ActionEvent e){
         if(e.getSource() == loginBtn){
-            Login login = new Login(); 
-            this.dispose();
+            System.out.println("Login button clicked");
+            try{
+                Login login = new Login(); 
+                this.dispose();
+            }catch(Exception ex){
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
         if(e.getSource() == regBtn){
-          Register reg = new Register();
-          this.dispose();
+            System.out.println("Register button clicked");
+            try{
+                Register reg = new Register();
+            this.dispose();
+            }catch(Exception ex){
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
